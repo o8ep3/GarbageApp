@@ -1,0 +1,21 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "GarbageDay",
+          "sourceDir": "lambda/ap-northeast-1_GarbageDay"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "locales": {
+        "ja-JP": {
+          "name": "ゴミ捨ての日"
+        }
+      }
+    }
+  }
+}

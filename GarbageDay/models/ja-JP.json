@@ -1,0 +1,173 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "ゴミ捨ての日",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "getTmrGarbageIntent",
+          "slots": [
+            {
+              "name": "day",
+              "type": "day"
+            }
+          ],
+          "samples": [
+            "{day} 教えて",
+            "{day} のゴミを教えて",
+            "{day} は",
+            "{day} のゴミ教えて",
+            "{day}"
+          ]
+        },
+        {
+          "name": "getNextGarbageDayIntent",
+          "slots": [
+            {
+              "name": "garbage_type",
+              "type": "garbage_type"
+            }
+          ],
+          "samples": [
+            "{garbage_type} 教えて",
+            "次の {garbage_type} の日を教えて",
+            "{garbage_type} の日を教えて",
+            "{garbage_type}",
+            "次の {garbage_type} ゴミの日を教えて"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "明後日",
+                "synonyms": [
+                  "あさって"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "明日",
+                "synonyms": [
+                  "あす",
+                  "あした"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "今日"
+              }
+            },
+            {
+              "name": {
+                "value": "昨日",
+                "synonyms": [
+                  "きのう"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "来週"
+              }
+            },
+            {
+              "name": {
+                "value": "再来週"
+              }
+            },
+            {
+              "name": {
+                "value": "先週"
+              }
+            },
+            {
+              "name": {
+                "value": "来月"
+              }
+            },
+            {
+              "name": {
+                "value": "先々週"
+              }
+            },
+            {
+              "name": {
+                "value": "一昨日",
+                "synonyms": [
+                  "おととい"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "先月"
+              }
+            }
+          ],
+          "name": "day"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "粗大ごみ"
+              }
+            },
+            {
+              "name": {
+                "value": "資源ごみ"
+              }
+            },
+            {
+              "name": {
+                "value": "ペットボトル"
+              }
+            },
+            {
+              "name": {
+                "value": "カン・ビン"
+              }
+            },
+            {
+              "name": {
+                "value": "プラスチック"
+              }
+            },
+            {
+              "name": {
+                "value": "もえないゴミ"
+              }
+            },
+            {
+              "name": {
+                "value": "もえるゴミ"
+              }
+            }
+          ],
+          "name": "garbage_type"
+        }
+      ]
+    }
+  },
+  "version": "5"
+}
