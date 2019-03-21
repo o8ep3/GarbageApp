@@ -105,7 +105,7 @@ var getUserAttribute = function(){
 
 //IdTokenが読み込まれた時，ユーザに紐付いたごみ収集日をdynamoDBから取得
 var getGarbageSchedule = function(){
-    console.log(idToken);
+    //console.log(idToken);
     $.ajax(
         "https://hkhkpqbf4i.execute-api.ap-northeast-1.amazonaws.com/prod",
         {
@@ -145,17 +145,39 @@ var getGarbageSchedule = function(){
 var postGarbageDaySchedule = function() {
     var dic = {"email" : currentUserData["email"]};
     var arr = [];
-    console.log(dic)
+    //console.log(dic)
     //テーブルの値をObject配列に格納する
     $("tr").each(function(i){
         $(this).children().each(function(j){
             arr[j] = $(this).text();
         })
         if (i >= 1) {
-            dic[String(i - 1)] = '{"garbage_type :' +  arr[0] + ', "garbage_timing" : ' + arr[2] + ', "garbage_day" : ' + arr[3] + '}';
+            dic[String(i - 1)] = '{"garbage_type" : "' +  arr[0] + '", "garbage_timing" : "' + arr[1] + '", "garbage_day" : "' + arr[2] + '"}';
         }
     })
     //api gateway postで書き込み
-    console.log(dic)
+    //console.log(JSON.stringify(dic));
+    $.ajax(
+        "https://hkhkpqbf4i.execute-api.ap-northeast-1.amazonaws.com/prod",
+        {
+            type: 'POST',
+            dataType : "json",
+            data : JSON.stringify(dic),
+            contentType: 'application/json',
+            headers: {
+                Authorization: idToken
+            },
+            async: false,
+            cache: false
+        }
+    )
+    .done(function(data) {
+        //console.log(data);
+        alert('保存しました');
+        location.reload();
+    })
+    .fail(function() {
+        console.log("failed to call api");
+    });
     //console.log(arr);
 };
