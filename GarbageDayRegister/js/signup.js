@@ -22,6 +22,10 @@ $(document).ready(function() {
 	$("#createAccount").click(function(event) {
 	    signUp();
 	});
+	// 「gotoSignin」ボタン押下時
+	$("#gotoSignin").click(function(event) {
+	    goToSignin();
+	});
 });
  
 /**
@@ -57,4 +61,8 @@ var signUp = function() {
             $(location).attr("href", "activation.html");
 	    }
     });
+}
+
+var goToSignin = function() {
+	$(location).attr("href", "signin.html");
 }

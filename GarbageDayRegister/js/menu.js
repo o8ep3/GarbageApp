@@ -92,7 +92,7 @@ var getUserAttribute = function(){
                     for (i = 0; i < result.length; i++) {
                         currentUserData[result[i].getName()] = result[i].getValue();
                     }
-                    console.log(currentUserData);
+                    //console.log(currentUserData);
                     $("div#menu p").text("ようこそ！" + currentUserData["email"] + "さん");
                     getGarbageSchedule();
                 });
