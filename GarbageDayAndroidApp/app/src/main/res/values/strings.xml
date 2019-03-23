@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GarbageDayAndroidApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="Prompt_garbage_type">ゴミの種類</string>
+    <string name="Prompt_garbage_timing">ごみ収集日のタイミング</string>
+    <string name="Prompt_garbage_day">ごみ収集日</string>
+
+</resources>
